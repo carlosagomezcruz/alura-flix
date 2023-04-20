@@ -1,0 +1,13 @@
+.button {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 21px;
+    color: #FFFFFF;
+    background-color: #2A7AE4;
+    border-radius: 4px;
+    width: 180px;
+    height: 54px;
+    border-color: #FFFFFF;
+    margin: 0.5%;
+
+}

@@ -1,0 +1,29 @@
+.banner {
+    position: relative;
+
+}
+
+.imagen-fondo {
+    width: 100%;
+
+}
+
+
+
+.contenedor-elementos {
+    position: absolute;
+    top: 0;
+
+}
+
+.contenedor-parrafos {
+  
+}
+
+.contenedor-curso {
+    display: inline-block;
+}
+
+.contenedor-parrafos h1, h2, p {
+    color: #ffffff;
+}
