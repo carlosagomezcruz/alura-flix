@@ -1,0 +1,17 @@
+.contenedor-formulario {
+    margin: 1% 0;
+}
+
+.formulario-titulo {
+    font-family: 'Roboto';
+    color: #F5F5F5;
+    text-align: center;
+    line-height: 50px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin: auto;
+}

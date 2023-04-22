@@ -1,14 +1,22 @@
+import { useState } from "react";
+import DefaultPage from "./Components/DefaultPage";
 import Banner from "./Components/Banner";
-import Cabecera from "./Components/Cabecera";
-import Footer from "./Components/Footer/Footer";
+import Carrusel from "./Components/Carrousel/Carrusel";
+import { datosIniciales } from './datos/datos-iniciales.js';
+import FormNuevoVideo from "./Components/Formulario/FormNuevoVideo";
+
+
 
 function App() {
+
+  const [videos, actualizarVideos] = useState(datosIniciales);
+
   return (
-    <div className="body">
-      <Cabecera />
+    <DefaultPage>
       <Banner />
-      <Footer />
-    </div>
+      <Carrusel datosIniciales={videos} />
+      {/* <FormNuevoVideo /> */}
+    </DefaultPage>
   );
 }
 

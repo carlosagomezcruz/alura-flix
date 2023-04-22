@@ -1,0 +1,10 @@
+.lista-categoria {
+    background-color: #53585D;
+    margin-top: 2%;
+    padding: 2%;
+    border-radius: 5px;
+    border: none;
+    color: #E5E5E5;
+    font-size: 12px;
+    outline: #53585D;
+}

@@ -1,0 +1,25 @@
+.input-contenedor {
+    display: flex;
+    flex-direction: column;
+    background-color: #53585D;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding: 1% 2%;
+    border-radius: 5px;
+    font-family: 'Roboto';
+    border-bottom: 3px solid red;
+}
+
+.label {
+    color: #E5E5E5;
+    font-size: 12px;
+    margin-bottom: 1%;
+}
+
+.input {
+    background-color: #53585D;
+    color: #E5E5E5;
+    border: none;
+    outline: #53585D;
+    height: 15px;
+}
