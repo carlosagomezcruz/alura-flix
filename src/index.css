@@ -8,10 +8,6 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-section {
-  padding: 0 2%;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

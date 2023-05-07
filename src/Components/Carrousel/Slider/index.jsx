@@ -7,11 +7,13 @@ import VideoCard from "../VideoCard";
 const SliderComponent = (props) => {
     const { datosIniciales } = props;
     return <section className="slider">
-        <Slider dots={true} speed={500} slidesToShow={4} slidesToScroll={3}>
-            {
-                datosIniciales.map((video, index) => <VideoCard key={index} video={video} />)
-            }
-        </Slider>
+        <div className="slider_content">
+            <Slider centerMode={true} dots={true} speed={500} slidesToShow={4} slidesToScroll={1}>
+                {
+                    datosIniciales.map((video, index) => <VideoCard key={index} video={video} />)
+                }
+            </Slider>
+        </div>
     </section>
 }
 

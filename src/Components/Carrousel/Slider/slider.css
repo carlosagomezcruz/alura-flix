@@ -1,5 +1,10 @@
 .slider {
-    /* background-color: blueviolet; */
+    width: 90%;
+}
+
+.slider_content {
+    position: relative;
+    left: 6%;
 
 }
 

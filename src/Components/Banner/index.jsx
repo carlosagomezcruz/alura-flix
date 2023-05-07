@@ -5,9 +5,9 @@ const Banner = () => {
         <img src="/img/banner/imagen-fondo.png" alt="Imagen-fondo" className='imagen-fondo'/>
         <div className="contenedor-elementos">
             <div className="contenedor-parrafos">
-                <h1>Front End</h1>
-                <h2>Challenge React</h2>
-                <p>
+                <h1 className="titulo-banner">Front End</h1>
+                <h2 className="subtitulo-banner">Challenge React</h2>
+                <p className="parrafo-banner">
                     Este challenge es una forma de aprendizaje. Es un
                     mecanismo donde podrás comprometerte en la resolución de
                     un problema para poder aplicar todos los conocimientos
