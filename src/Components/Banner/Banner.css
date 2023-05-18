@@ -23,9 +23,7 @@
     padding: 2%
 }
 
-.contenedor-parrafos h1,
-h2,
-p {
+.contenedor-parrafos {
     color: #F5F5F5;
     font-family: 'Roboto';
 }

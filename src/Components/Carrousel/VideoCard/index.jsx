@@ -1,10 +1,12 @@
 import './videocard.css';
 
-const VideoCard = (props) => {
-    const { video } = props;
-    return <div className="contenedor-video">
-        <img src={video.videoUrl} alt="img" />
-    </div>
+const VideoCard = ({ data }) => {
+    return <>
+        <div className="contenedor-video" >
+            <img className="video" src={data.linkImgVideo} alt="img" />
+        </div >
+
+    </>
 }
 
 export default VideoCard;

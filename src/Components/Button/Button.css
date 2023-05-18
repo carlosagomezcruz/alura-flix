@@ -1,12 +1,12 @@
 .button {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto';
     font-weight: 600;
-    font-size: 21px;
+    font-size: 16px;
     color: #FFFFFF;
     background-color: #2A7AE4;
     border-radius: 4px;
-    width: 180px;
-    height: 54px;
+    width: 140px;
+    height: 45px;
     border-color: #FFFFFF;
     margin: 0.5%;
 

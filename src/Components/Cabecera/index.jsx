@@ -1,14 +1,22 @@
+import { Link, useLocation } from 'react-router-dom';
 import Button from '../Button';
 import './Cabecera.css';
 
-const Cabecera = () => { 
+const Cabecera = () => {
+
+    const location = useLocation();
+
     return <header className="header">
         <img src="/img/header/logo2.png" alt="logo-alura" />
-        <Button color="#000000">
-            Nuevo Video
-        </Button>
+        {
+            (location.pathname === "/") && < Link to={"formNuevoVideo"}>
+                <Button color="#000000">
+                    Nuevo Video
+                </Button>
+            </Link>
+        }
 
-    </header>
+    </header >
 }
 
 export default Cabecera;

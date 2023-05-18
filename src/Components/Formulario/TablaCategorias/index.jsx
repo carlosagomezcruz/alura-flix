@@ -1,9 +1,9 @@
 import React from 'react';
 import './tabla-categorias.css';
-import { categorias } from '../../../datos/datos-iniciales';
 
 
-const TablaCategorias = () => {
+const TablaCategorias = ({data}) => {
+    
     return (
         <div className="tablaCategorias__contenedor">
             <table>
@@ -16,7 +16,7 @@ const TablaCategorias = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {categorias.map((categoria, i) => {
+                    {data.map((categoria, i) => {
                         const { nombreCategoria, descripcion, editar, remover } = categoria;
 
                         return <tr key={i}>

@@ -1,24 +1,27 @@
-import { useState } from "react";
 import DefaultPage from "./Components/DefaultPage";
-import Banner from "./Components/Banner";
-import Carrusel from "./Components/Carrousel/Carrusel";
-import { allVideos } from './datos/datos-iniciales.js';
 import FormNuevoVideo from "./Components/Formulario/FormNuevoVideo";
 import FormNuevaCategoria from "./Components/Formulario/FormNuevaCategoria";
-
+import { Route, Routes } from "react-router-dom";
+import Home from "./Components/Inicio/Home";
 
 
 function App() {
 
-  const [videos, actualizarVideos] = useState(allVideos);
 
   return (
     <DefaultPage>
-      {/* <Banner />
-      <Carrusel datosIniciales={videos} /> */}
-      {/* <FormNuevoVideo /> */}
-      <FormNuevaCategoria />
+
+      <Routes>
+
+        <Route path="/" element={<Home />} />
+
+        <Route path="formNuevoVideo" element={<FormNuevoVideo />} />
+
+        <Route path="formNuevaCategoria" element={<FormNuevaCategoria />} />
+
+      </Routes>
     </DefaultPage>
+
   );
 }
 

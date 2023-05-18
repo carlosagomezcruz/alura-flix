@@ -1,5 +1,5 @@
 import SliderComponent from '../Slider';
-
+import './slider.css';
 
 const Carrusel = (props) => {
 

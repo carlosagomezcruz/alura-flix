@@ -1,0 +1,20 @@
+.categorias__contenedor-descripcion {
+    padding: 1% 2%;
+    color: #F5F5F5;
+    font-family: 'Roboto';
+    
+}
+
+.categorias__descripcion-h2 {
+    display: inline-block;
+    margin-left: 1%; 
+
+    padding: 1% 1%;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.categorias__descripcion-span {
+    margin-left: 1%; 
+
+}

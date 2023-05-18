@@ -1,10 +1,15 @@
 import './Button.css';
 
-const Button = (props) => {
-    const {color} = props
+const Button = ({ color = null, noBorder = null, children, type = null}) => {
 
-    return <button className="button" style={{backgroundColor: color}}>
-        {props.children}
+    let style = { backgroundColor: color }
+    
+    if (noBorder) {
+        style = {...style, border: 'none'} 
+    }
+
+    return <button type={type} className="button" style={style}>
+        {children}
     </button>
 }
 

@@ -1,20 +1,34 @@
-import Slider from "react-slick";
+import React, { Component } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './slider.css';
+import Slider from "react-slick";
 import VideoCard from "../VideoCard";
 
-const SliderComponent = (props) => {
-    const { datosIniciales } = props;
-    return <section className="slider">
-        <div className="slider_content">
-            <Slider centerMode={true} dots={true} speed={500} slidesToShow={4} slidesToScroll={1}>
-                {
-                    datosIniciales.map((video, index) => <VideoCard key={index} video={video} />)
-                }
-            </Slider>
-        </div>
-    </section>
-}
 
-export default SliderComponent;
+export default class SliderComponent extends Component {
+    render() {
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 5,
+            slidesToScroll: 2
+        };
+
+
+        return (
+            <div className="slider">
+                <div className="slider_content">
+                    <Slider {...settings}>
+                        {
+                            this.props.videos.map((video) => {
+                                return <VideoCard key={video.id} data={video} />
+                            })
+                        }
+                    </Slider>
+                </div>
+            </div >
+        );
+    }
+}
