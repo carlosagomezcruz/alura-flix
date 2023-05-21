@@ -1,4 +1,25 @@
-.tablaCategorias__contenedor {
+/* .tablaCategorias__contenedor {
     display: flex;
     justify-content: center;
+    margin: 2% 0;
+} */
+
+.table {
+    border: 2px solid #2A7AE4;
+    border-collapse: collapse;
+    width: 70%;
+    margin: 2% 0;
+    align-self: center;
+    color: #FFFFFF;
 }
+
+th, td {
+    padding: 0.5% 1%;
+}
+
+.thead th {
+    border: 2px solid #2A7AE4;
+    text-align: start;
+}
+
+

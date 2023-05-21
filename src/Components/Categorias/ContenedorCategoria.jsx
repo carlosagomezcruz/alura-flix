@@ -10,7 +10,6 @@ const ContenedorCategoria = ({ nombreCategoria, descripcion, color, children }) 
                 <span className="categorias__descripcion-span" >{descripcion}</span>
             </div>
             {children}
-
         </div>
     )
 }

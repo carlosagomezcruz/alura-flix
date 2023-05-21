@@ -10,8 +10,6 @@ const Categorias = () => {
     const { videos, categorias } = useContext(dataContext);
 
     return (
-
-
         <>
 
             {

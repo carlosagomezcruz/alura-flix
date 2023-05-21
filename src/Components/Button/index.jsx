@@ -1,4 +1,3 @@
-import './Button.css';
 
 const Button = ({ color = null, noBorder = null, children, type = null}) => {
 

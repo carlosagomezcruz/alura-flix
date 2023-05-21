@@ -1,6 +1,13 @@
 import { Link, useLocation } from 'react-router-dom';
-import Button from '../Button';
+import styled from 'styled-components';
+import { Button, ContenedorButton } from '../UI'
 import './Cabecera.css';
+
+const ButtonCabecera = styled(Button)`
+        background-color: #000000;
+        width: 130px;
+        height: 46px;         
+    `
 
 const Cabecera = () => {
 
@@ -10,9 +17,9 @@ const Cabecera = () => {
         <img src="/img/header/logo2.png" alt="logo-alura" />
         {
             (location.pathname === "/") && < Link to={"formNuevoVideo"}>
-                <Button color="#000000">
+                <ButtonCabecera>
                     Nuevo Video
-                </Button>
+                </ButtonCabecera>
             </Link>
         }
 

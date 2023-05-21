@@ -1,8 +1,10 @@
 import { useState } from "react"
 
+
 export const useForm = (data) => {
 
     const [inputs, setInputs] = useState(data);
+
 
     const handleInput = (target) => {
         const { name, value } = target;
@@ -13,6 +15,6 @@ export const useForm = (data) => {
 
     return {
         inputs,
-        handleInput,
+        handleInput
     }
 }
