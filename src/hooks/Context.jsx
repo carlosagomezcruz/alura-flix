@@ -28,13 +28,16 @@ export const HandleData = ({ children }) => {
     const value = {
         videos,
         categorias,
-        updateVideos: (newVideo) => {
+        createVideos: (newVideo) => {
             setVideos([...videos, newVideo])
 
         },
-        updateCategorias: (newCategoria) => {
+        createCategorias: (newCategoria) => {
             setCategorias([...categorias, newCategoria])
-
+        },
+        updateCategorias: (categoria) => {
+            const arr = categorias.filter(cat => cat.id !== categoria.id);
+            setCategorias([...arr, categoria])
         }
 
     }

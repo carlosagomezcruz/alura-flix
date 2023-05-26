@@ -1,13 +1,11 @@
 import React from 'react';
 import './tabla-categorias.css';
-import { useCrud } from '../../../hooks/useCrud';
+import { useNavigate } from 'react-router-dom';
 
 
 const TablaCategorias = ({ data }) => {
+    const navigate = useNavigate();
 
-    useCrud(data)
-
-    
     return (
         // <div className="tablaCategorias__contenedor">
         <table className='table'>
@@ -18,6 +16,7 @@ const TablaCategorias = ({ data }) => {
                     <th>Editar</th>
                     <th>Remover</th>
                 </tr>
+
             </thead>
             <tbody>
                 {data.map((categoria, i) => {
@@ -26,8 +25,8 @@ const TablaCategorias = ({ data }) => {
                     return <tr key={i}>
                         <td className='td'>{nombreCategoria}</td>
                         <td className='td'>{descripcion}</td>
-                        <td className='td'><button >Editar</button></td>
-                        <td className='td'><button >Eliminar</button></td>
+                        <td className='td'><button id={id} onClick={(e) => { navigate(`/../editarCategoria/${e.target.id}`) }} >Editar</button></td>
+                        <td className='td'><button id={id} >Eliminar</button></td>
                     </tr>
                 }
                 )}
@@ -36,6 +35,6 @@ const TablaCategorias = ({ data }) => {
         </table>
         // </div>
     )
-    }
+}
 
-    export default TablaCategorias;
+export default TablaCategorias;

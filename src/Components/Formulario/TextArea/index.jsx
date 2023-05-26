@@ -10,6 +10,7 @@ const TextArea = ({ placeholder, value, name, handleInput, handleValidation, val
         value={value}
         onBlur={(e) => { handleValidation(e.target) }}
         onChange={(e) => handleInput(e.target)}
+        data-type="input"
     ></textarea>
         {valid !== null && <span>{valid.message}</span>}
     </InputContainer>

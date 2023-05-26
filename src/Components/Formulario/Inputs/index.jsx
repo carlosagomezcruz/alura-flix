@@ -11,6 +11,7 @@ const InputDate = ({ label, type = "text", value, name, handleInput, handleValid
             value={value}
             onBlur={(e) => { handleValidation(e.target) }}
             onChange={(e) => handleInput(e.target)}
+            data-type="input"
         />
         {valid !== null && <span>{valid.message}</span>}
     </InputContainer>

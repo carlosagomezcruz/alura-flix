@@ -233,28 +233,28 @@ export const allVideos = [
 
 export const categories = [
     {
-        id:1,
+        id:"1",
         nombreCategoria: "Back End",
         descripcion: "Todos los video que estoy usando para estudiar Back End",
         color: "#00C86F",
         codigoSeguridad: 123,
     },
     {
-        id:2,
+        id:"2",
         nombreCategoria: "Mobile",
         descripcion: "Contenido que vengo estudiando sobre React Native y Flutter",
         color: "#d2945b",
         codigoSeguridad: 456,
     },
     {
-        id:3,
+        id:"3",
         nombreCategoria: "Infraestructura",
         descripcion: "Todo lo que estoy aprendiendo sobre Docker y mucho mas",
         color: "#00C86F",
         codigoSeguridad: 789,
     },
     {
-        id:4,
+        id:"4",
         nombreCategoria: "Data Science",
         descripcion: "Cosas de React y Python que vengo aprendiendo",
         color: "#A6D157",

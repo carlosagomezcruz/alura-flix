@@ -12,7 +12,7 @@ import { Button, ContenedorButton } from '../../UI';
 
 const FormNuevoVideo = () => {
 
-    const { updateVideos } = useContext(dataContext);
+    const { createVideos } = useContext(dataContext);
 
     const { inputs, handleInput } = useForm({
         titulo: "",
@@ -40,7 +40,7 @@ const FormNuevoVideo = () => {
             onSubmit={(e) => {
                 e.preventDefault();
                 const lastVideo = { ...inputs, id: uuid() }
-                updateVideos(lastVideo);
+                createVideos(lastVideo);
             }}
         >
             <InputDate

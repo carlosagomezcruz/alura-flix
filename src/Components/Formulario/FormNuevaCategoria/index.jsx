@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { dataContext } from '../../../hooks/Context';
 import { useValidations } from '../../../hooks/useValidations';
 import { useForm } from '../../../hooks/useForm';
@@ -13,7 +13,7 @@ import { Button } from '../../UI';
 
 const FormNuevaCategoria = () => {
 
-    const { categorias, updateCategorias } = useContext(dataContext);
+    const { categorias, createCategorias } = useContext(dataContext);
 
     const { inputs, handleInput } = useForm({
         nombreCategoria: "",
@@ -40,7 +40,7 @@ const FormNuevaCategoria = () => {
                 onSubmit={(e) => {
                     e.preventDefault();
                     const lastCategoria = { ...inputs, id: uuid() }
-                    updateCategorias(lastCategoria);
+                    createCategorias(lastCategoria);
                 }}
                 className="categoria__form">
 
@@ -83,9 +83,9 @@ const FormNuevaCategoria = () => {
                     <Button>Cancelar</Button>
                 </div>
             </form>
-            
         </div>
-        <TablaCategorias data={categorias}/>
+
+        <TablaCategorias data={categorias} />
 
 
     </section>

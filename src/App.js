@@ -3,6 +3,7 @@ import FormNuevoVideo from "./Components/Formulario/FormNuevoVideo";
 import FormNuevaCategoria from "./Components/Formulario/FormNuevaCategoria";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Components/Inicio/Home";
+import ModalEditarCategoria from "./Components/Formulario/FormEditarCategoria";
 
 
 function App() {
@@ -19,8 +20,10 @@ function App() {
 
         <Route path="formNuevaCategoria" element={<FormNuevaCategoria />} />
 
+        <Route path="editarCategoria/:id" element={<ModalEditarCategoria />} />
+
       </Routes>
-    </DefaultPage>
+    </DefaultPage >
 
   );
 }
