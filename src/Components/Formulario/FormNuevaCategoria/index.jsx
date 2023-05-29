@@ -8,10 +8,13 @@ import TablaCategorias from '../TablaCategorias';
 import TextArea from '../TextArea';
 import './FormNuevaCategoria.css'
 import { Button } from '../../UI';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const FormNuevaCategoria = () => {
+
+    const navigate = useNavigate();
 
     const { categorias, createCategorias } = useContext(dataContext);
 
@@ -22,16 +25,14 @@ const FormNuevaCategoria = () => {
         codigoSeguridad: ""
     })
 
-    const { validation, handleValidation } = useValidations({
+    const { validation, handleValidation, allValid } = useValidations({
         nombreCategoria: null,
         descripcion: null,
         color: null,
         codigoSeguridad: null
     })
 
-
     const { nombreCategoria, descripcion, color, codigoSeguridad } = inputs;
-
 
     return <section className="categoria__contenedor-formulario">
         <h1 className="categoria__formulario-titulo">Nueva Categoria</h1>
@@ -39,8 +40,13 @@ const FormNuevaCategoria = () => {
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    const lastCategoria = { ...inputs, id: uuid() }
-                    createCategorias(lastCategoria);
+                    if (allValid()) {
+                        const lastCategoria = { ...inputs, id: uuid(), dateCreated: new Date().toLocaleString("es-CO") }
+                        createCategorias(lastCategoria);
+                    } else {
+                        console.log("No se envió")
+                    }
+
                 }}
                 className="categoria__form">
 
@@ -78,9 +84,13 @@ const FormNuevaCategoria = () => {
                     valid={validation.codigoSeguridad}
                 />
                 <div>
-                    <Button type='submit'>Guardar</Button>
+                    <Button
+                        type='submit'
+                        style={{ opacity: `${allValid() ? "1" : "0.5"}` }}>Guardar</Button>
                     <Button>Limpiar</Button>
-                    <Button>Cancelar</Button>
+                    <Button
+                        onClick={() => { navigate("/../formNuevoVideo") }}
+                    >Cancelar</Button>
                 </div>
             </form>
         </div>

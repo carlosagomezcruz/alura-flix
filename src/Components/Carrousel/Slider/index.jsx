@@ -13,7 +13,8 @@ export default class SliderComponent extends Component {
             infinite: true,
             speed: 500,
             slidesToShow: 5,
-            slidesToScroll: 2
+            slidesToScroll: 2,
+            infinite: false
         };
 
 
@@ -23,9 +24,12 @@ export default class SliderComponent extends Component {
                     <Slider {...settings}>
                         {
                             this.props.videos.map((video) => {
+                                console.log("Hola")
                                 return <VideoCard key={video.id} data={video} />
                             })
+                            
                         }
+                        
                     </Slider>
                 </div>
             </div >

@@ -238,6 +238,7 @@ export const categories = [
         descripcion: "Todos los video que estoy usando para estudiar Back End",
         color: "#00C86F",
         codigoSeguridad: 123,
+        dateCreated: "28/5/2023, 21:22:33"
     },
     {
         id:"2",
@@ -245,6 +246,7 @@ export const categories = [
         descripcion: "Contenido que vengo estudiando sobre React Native y Flutter",
         color: "#d2945b",
         codigoSeguridad: 456,
+        dateCreated: "27/5/2023, 21:22:33"
     },
     {
         id:"3",
@@ -252,6 +254,7 @@ export const categories = [
         descripcion: "Todo lo que estoy aprendiendo sobre Docker y mucho mas",
         color: "#00C86F",
         codigoSeguridad: 789,
+        dateCreated: "26/5/2023, 21:22:33"
     },
     {
         id:"4",
@@ -259,6 +262,7 @@ export const categories = [
         descripcion: "Cosas de React y Python que vengo aprendiendo",
         color: "#A6D157",
         codigoSeguridad: 987,
+        dateCreated: "25/5/2023, 21:22:33"
     },
 
 ]

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { dataContext } from "../../../hooks/Context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "../../../hooks/useForm";
 import { v4 as uuid } from 'uuid';
 import InputDate from "../Inputs"
@@ -11,6 +11,8 @@ import { useValidations } from "../../../hooks/useValidations";
 import { Button, ContenedorButton } from '../../UI';
 
 const FormNuevoVideo = () => {
+
+    const navigate = useNavigate();
 
     const { createVideos } = useContext(dataContext);
 
@@ -23,7 +25,7 @@ const FormNuevoVideo = () => {
         codigoSeguridad: ""
     })
 
-    const { validation, handleValidation } = useValidations({
+    const { validation, handleValidation, allValid } = useValidations({
         titulo: null,
         videoUrl: null,
         linkImgVideo: null,
@@ -39,8 +41,13 @@ const FormNuevoVideo = () => {
         <form className="form"
             onSubmit={(e) => {
                 e.preventDefault();
-                const lastVideo = { ...inputs, id: uuid() }
-                createVideos(lastVideo);
+                if (allValid()) {
+                    const lastVideo = { ...inputs, id: uuid() }
+                    createVideos(lastVideo);
+                } else { 
+                    console.log("No se envió")
+                }
+                
             }}
         >
             <InputDate
@@ -93,13 +100,17 @@ const FormNuevoVideo = () => {
             <ContenedorButton>
                 <Button
                     type='submit'
-                    noBorder>
+                    style={{ opacity: `${allValid() ? "1" : "0.5"}` }}
+                >
                     Guardar
                 </Button>
-                <Button
-                    color='#9E9E9E'
-                    noBorder>
+                <Button>
                     Limpiar
+                </Button>
+                <Button
+                    onClick={() => { navigate("/../") }}
+                >
+                    Cancelar
                 </Button>
                 <Link to="/../formNuevaCategoria">
                     <Button noBorder>Nueva categoria</Button>

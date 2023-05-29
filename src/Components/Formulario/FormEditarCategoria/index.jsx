@@ -4,15 +4,16 @@ import { Button } from '../../UI';
 import InputDate from '../Inputs';
 import TextArea from '../TextArea';
 
+import { useNavigate, useParams } from 'react-router-dom';
 import { dataContext } from '../../../hooks/Context';
 import { useValidations } from '../../../hooks/useValidations';
 import { useForm } from '../../../hooks/useForm';
 import './FormEditarCategoria.css'
-import { useParams } from 'react-router-dom';
 
 
 const ModalEditarCategoria = () => {
 
+    const navigate = useNavigate()
     const param = useParams()
 
     const { categorias, updateCategorias } = useContext(dataContext);
@@ -26,7 +27,7 @@ const ModalEditarCategoria = () => {
         codigoSeguridad: categoria.codigoSeguridad
     });
 
-    const { validation, handleValidation } = useValidations({
+    const { validation, handleValidation, allValid } = useValidations({
         nombreCategoria: null,
         descripcion: null,
         color: null,
@@ -41,8 +42,13 @@ const ModalEditarCategoria = () => {
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
-                        const lastCategoria = { ...inputs, id: categoria.id }
-                        updateCategorias(lastCategoria);
+                        if (allValid()) {
+                            const lastCategoria = { ...inputs, id: categoria.id }
+                            updateCategorias(lastCategoria);
+                        } else { 
+                            console.log("No se envió")
+                        }
+                        
                     }}
                     className="categoria__form">
 
@@ -80,9 +86,15 @@ const ModalEditarCategoria = () => {
                         valid={validation.codigoSeguridad}
                     />
                     <div>
-                        <Button type='submit'>Guardar</Button>
+                        <Button
+                            type='submit'
+                            style={{ opacity: `${allValid() ? "1" : "0.5"}` }}
+                        >Guardar</Button>
                         <Button>Limpiar</Button>
-                        <Button>Cancelar</Button>
+                        <Button
+                            onClick={() => { navigate("/../formNuevaCategoria") }}
+                        >
+                            Cancelar</Button>
                     </div>
                 </form>
             </div>

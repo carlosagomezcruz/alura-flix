@@ -38,7 +38,16 @@ export const HandleData = ({ children }) => {
         updateCategorias: (categoria) => {
             const arr = categorias.filter(cat => cat.id !== categoria.id);
             setCategorias([...arr, categoria])
-        }
+        },
+        deleteCategorias: (id) => {
+            console.log(id);
+            const arr = categorias.filter(cat => cat.id !== id);
+            setCategorias(arr)
+        },
+        deleteVideos: (id) => {
+            const arr = videos.filter(vid => vid.id !== id);
+            setVideos(arr)
+        },
 
     }
 

@@ -5,9 +5,9 @@ import Categorias from '../Categorias';
 const Main = () => {
 
     return (
-        <>
-            <Categorias/>
-        </>
+        <section style={{ marginBottom: "5%" }}>
+            <Categorias />
+        </section>
     )
 }
 

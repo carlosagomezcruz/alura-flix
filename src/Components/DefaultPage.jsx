@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import Cabecera from './Cabecera';
 import Footer from './Footer/Footer';
 

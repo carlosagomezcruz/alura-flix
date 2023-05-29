@@ -11,9 +11,18 @@ export const useValidations = (inputs) => {
 
     }
 
+    const allValid = () => {
+        let txt = [];
+        for (let x in validation) {
+            txt.push(validation[x]?.valid);
+        }
+        const res = txt.every(value => value !== false && value !== undefined)
+        return res
+    }
     return {
         validation,
-        handleValidation
+        handleValidation,
+        allValid
     }
 }
 
